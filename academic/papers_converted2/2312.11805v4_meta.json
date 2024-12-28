@@ -1,0 +1,415 @@
+{
+    "language": "English",
+    "filetype": "pdf",
+    "toc": [
+        [
+            1,
+            "Introduction",
+            1
+        ],
+        [
+            1,
+            "Model Architecture",
+            2
+        ],
+        [
+            1,
+            "Training Infrastructure",
+            4
+        ],
+        [
+            1,
+            "Pre-Training Dataset",
+            5
+        ],
+        [
+            1,
+            "Evaluation",
+            6
+        ],
+        [
+            2,
+            "Text",
+            6
+        ],
+        [
+            3,
+            "Academic Benchmarks",
+            6
+        ],
+        [
+            3,
+            "Trends in Capabilities",
+            7
+        ],
+        [
+            3,
+            "Nano",
+            8
+        ],
+        [
+            3,
+            "Multilinguality",
+            9
+        ],
+        [
+            4,
+            "Machine Translation",
+            9
+        ],
+        [
+            4,
+            "Multilingual Math and Summarization",
+            10
+        ],
+        [
+            3,
+            "Long Context",
+            10
+        ],
+        [
+            3,
+            "Factuality",
+            11
+        ],
+        [
+            3,
+            "Complex Reasoning Systems",
+            12
+        ],
+        [
+            2,
+            "Multimodal",
+            13
+        ],
+        [
+            3,
+            "Image Understanding",
+            13
+        ],
+        [
+            3,
+            "Video Understanding",
+            16
+        ],
+        [
+            3,
+            "Image Generation",
+            16
+        ],
+        [
+            3,
+            "Audio Understanding",
+            18
+        ],
+        [
+            3,
+            "Modality Combination",
+            19
+        ],
+        [
+            1,
+            "Post-Training Models",
+            20
+        ],
+        [
+            2,
+            "Gemini Apps: Gemini and Gemini Advanced",
+            20
+        ],
+        [
+            2,
+            "Gemini APIs: Google AI Studio and Cloud Vertex AI",
+            20
+        ],
+        [
+            2,
+            "Post-Training Methods & Data",
+            20
+        ],
+        [
+            2,
+            "Evaluation",
+            21
+        ],
+        [
+            2,
+            "Model Capabilities",
+            21
+        ],
+        [
+            3,
+            "Instruction Following",
+            22
+        ],
+        [
+            3,
+            "Tool Use",
+            22
+        ],
+        [
+            3,
+            "Multilinguality",
+            23
+        ],
+        [
+            3,
+            "Multimodal Vision",
+            24
+        ],
+        [
+            3,
+            "Coding",
+            25
+        ],
+        [
+            1,
+            "Responsible Deployment",
+            26
+        ],
+        [
+            2,
+            "Impact Assessment",
+            26
+        ],
+        [
+            3,
+            "Model Assessment",
+            27
+        ],
+        [
+            3,
+            "Product Assessments",
+            27
+        ],
+        [
+            2,
+            "Safety Policies",
+            28
+        ],
+        [
+            2,
+            "Mitigations",
+            28
+        ],
+        [
+            3,
+            "Data Curation Practices",
+            28
+        ],
+        [
+            3,
+            "Model Mitigation",
+            29
+        ],
+        [
+            4,
+            "Harm-inducing queries",
+            29
+        ],
+        [
+            4,
+            "Supervised fine-tuning",
+            29
+        ],
+        [
+            4,
+            "Reinforcement learning during human feedback",
+            30
+        ],
+        [
+            4,
+            "Beyond the general recipe",
+            30
+        ],
+        [
+            2,
+            "Safety Evaluations",
+            31
+        ],
+        [
+            3,
+            "Development & Assurance Evaluations",
+            32
+        ],
+        [
+            4,
+            "Content safety",
+            32
+        ],
+        [
+            4,
+            "Representational harms",
+            33
+        ],
+        [
+            4,
+            "Dangerous capabilities",
+            35
+        ],
+        [
+            3,
+            "Gemini Advanced ",
+            35
+        ],
+        [
+            3,
+            "Red Teaming",
+            36
+        ],
+        [
+            4,
+            "Model-level Red Teaming",
+            36
+        ],
+        [
+            4,
+            "Gemini Advanced",
+            38
+        ],
+        [
+            3,
+            "External Evaluations",
+            38
+        ],
+        [
+            4,
+            "Gemini Ultra External Evaluations",
+            38
+        ],
+        [
+            3,
+            "Gemini Advanced",
+            39
+        ],
+        [
+            2,
+            "Deployment",
+            39
+        ],
+        [
+            1,
+            "Discussion and Conclusion",
+            39
+        ],
+        [
+            1,
+            "Contributions and Acknowledgments",
+            53
+        ],
+        [
+            1,
+            "Appendix",
+            71
+        ],
+        [
+            2,
+            "Gemini Ultra Model Card",
+            71
+        ],
+        [
+            2,
+            "Chain-of-Thought Comparisons on MMLU benchmark",
+            73
+        ],
+        [
+            2,
+            "Capabilities and Benchmarking Tasks",
+            75
+        ],
+        [
+            2,
+            "Qualitative Examples",
+            76
+        ],
+        [
+            3,
+            "Chart understanding and reasoning over data",
+            77
+        ],
+        [
+            3,
+            "Multimodal question answering",
+            78
+        ],
+        [
+            3,
+            "Interleaved image and text generation",
+            79
+        ],
+        [
+            3,
+            "Image understanding and reasoning",
+            80
+        ],
+        [
+            3,
+            "Geometrical reasoning",
+            81
+        ],
+        [
+            3,
+            "Information seeking about objects",
+            81
+        ],
+        [
+            3,
+            "Multimodal reasoning based on visual cues",
+            82
+        ],
+        [
+            3,
+            "Multimodal humor understanding",
+            83
+        ],
+        [
+            2,
+            "Commonsense reasoning in a multilingual setting",
+            84
+        ],
+        [
+            3,
+            "Reasoning and code generation",
+            85
+        ],
+        [
+            3,
+            "Mathematics: Calculus",
+            87
+        ],
+        [
+            2,
+            "Multi-step reasoning and mathematics",
+            88
+        ],
+        [
+            3,
+            "Complex image understanding, code generation, and instruction following",
+            89
+        ],
+        [
+            3,
+            "Video understanding and reasoning",
+            90
+        ]
+    ],
+    "pages": 90,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0
+    },
+    "block_stats": {
+        "header_footer": 89,
+        "code": 8,
+        "table": 14,
+        "equations": {
+            "successful_ocr": 1,
+            "unsuccessful_ocr": 0,
+            "equations": 1
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}

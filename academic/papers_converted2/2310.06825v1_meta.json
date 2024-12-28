@@ -1,0 +1,65 @@
+{
+    "language": "English",
+    "filetype": "pdf",
+    "toc": [
+        [
+            1,
+            "Introduction",
+            1
+        ],
+        [
+            1,
+            "Architectural details",
+            2
+        ],
+        [
+            1,
+            "Results",
+            3
+        ],
+        [
+            1,
+            "Instruction Finetuning",
+            4
+        ],
+        [
+            1,
+            "Adding guardrails for front-facing applications",
+            5
+        ],
+        [
+            2,
+            "System prompt to enforce guardrails",
+            5
+        ],
+        [
+            2,
+            "Content moderation with self-reflection",
+            5
+        ],
+        [
+            1,
+            "Conclusion",
+            6
+        ]
+    ],
+    "pages": 9,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0
+    },
+    "block_stats": {
+        "header_footer": 0,
+        "code": 0,
+        "table": 4,
+        "equations": {
+            "successful_ocr": 0,
+            "unsuccessful_ocr": 0,
+            "equations": 0
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}

@@ -1,0 +1,150 @@
+{
+    "language": "English",
+    "filetype": "pdf",
+    "toc": [
+        [
+            1,
+            "Introduction",
+            1
+        ],
+        [
+            1,
+            "Related Work",
+            3
+        ],
+        [
+            1,
+            "Preliminaries",
+            3
+        ],
+        [
+            1,
+            "VMamba: Visual State Space Model",
+            4
+        ],
+        [
+            2,
+            "Network Architecture",
+            4
+        ],
+        [
+            2,
+            "2D-Selective-Scan for Vision Data (SS2D)",
+            4
+        ],
+        [
+            2,
+            "Accelerating VMamba",
+            5
+        ],
+        [
+            1,
+            "Experiments",
+            6
+        ],
+        [
+            2,
+            "Image Classification",
+            6
+        ],
+        [
+            2,
+            "Downstream Tasks",
+            6
+        ],
+        [
+            2,
+            "Analysis and Discussion",
+            8
+        ],
+        [
+            1,
+            "Conclusion",
+            9
+        ],
+        [
+            1,
+            "Discretization of State Space Models (SSMs)",
+            14
+        ],
+        [
+            1,
+            "Derivation of the Recurrence Relation of Selective SSMs",
+            14
+        ],
+        [
+            1,
+            "Details of the relationship between SS2D and Self-attention",
+            14
+        ],
+        [
+            1,
+            "Visualization of Attention and Activation Maps",
+            15
+        ],
+        [
+            1,
+            "Detailed Experiment Settings",
+            17
+        ],
+        [
+            1,
+            "Performance of the VMamba Family on Downstream Tasks",
+            17
+        ],
+        [
+            1,
+            "Details of VMamba's Scale-Up Experiments",
+            18
+        ],
+        [
+            1,
+            "Ablation Study",
+            20
+        ],
+        [
+            2,
+            "Influence of the Scanning Pattern",
+            20
+        ],
+        [
+            2,
+            "Influence of the Initialization Approach",
+            22
+        ],
+        [
+            2,
+            "Influence of the d_state Parameter",
+            23
+        ],
+        [
+            2,
+            "Influence of ssm-ratio, mlp-ratio, and layer numbers",
+            23
+        ],
+        [
+            2,
+            "Influence of the Activation Function",
+            23
+        ]
+    ],
+    "pages": 25,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0
+    },
+    "block_stats": {
+        "header_footer": 0,
+        "code": 4,
+        "table": 4,
+        "equations": {
+            "successful_ocr": 11,
+            "unsuccessful_ocr": 1,
+            "equations": 12
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}

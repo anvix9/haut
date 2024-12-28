@@ -1,0 +1,310 @@
+{
+    "language": "English",
+    "filetype": "pdf",
+    "toc": [
+        [
+            1,
+            "Introduction",
+            1
+        ],
+        [
+            1,
+            "State Space Models",
+            2
+        ],
+        [
+            1,
+            "Selective State Space Models",
+            5
+        ],
+        [
+            2,
+            "Motivation: Selection as a Means of Compression",
+            5
+        ],
+        [
+            2,
+            "Improving SSMs with Selection",
+            5
+        ],
+        [
+            2,
+            "Efficient Implementation of Selective SSMs",
+            6
+        ],
+        [
+            3,
+            "Motivation of Prior Models",
+            6
+        ],
+        [
+            3,
+            "Overview of Selective Scan: Hardware-Aware State Expansion",
+            7
+        ],
+        [
+            2,
+            "A Simplified SSM Architecture",
+            7
+        ],
+        [
+            2,
+            "Properties of Selection Mechanisms",
+            7
+        ],
+        [
+            3,
+            "Connection to Gating Mechanisms",
+            8
+        ],
+        [
+            3,
+            "Interpretation of Selection Mechanisms",
+            8
+        ],
+        [
+            2,
+            "Additional Model Details",
+            9
+        ],
+        [
+            1,
+            "Empirical Evaluation",
+            10
+        ],
+        [
+            2,
+            "Synthetic Tasks",
+            10
+        ],
+        [
+            3,
+            "Selective Copying",
+            10
+        ],
+        [
+            3,
+            "Induction Heads",
+            10
+        ],
+        [
+            2,
+            "Language Modeling",
+            11
+        ],
+        [
+            3,
+            "Scaling Laws",
+            11
+        ],
+        [
+            3,
+            "Downstream Evaluations",
+            12
+        ],
+        [
+            2,
+            "DNA Modeling",
+            12
+        ],
+        [
+            3,
+            "Scaling: Model Size",
+            13
+        ],
+        [
+            3,
+            "Scaling: Context Length",
+            13
+        ],
+        [
+            3,
+            "Synthetic Species Classification",
+            13
+        ],
+        [
+            2,
+            "Audio Modeling and Generation",
+            14
+        ],
+        [
+            3,
+            "Long-Context Autoregressive Pretraining",
+            14
+        ],
+        [
+            3,
+            "Autoregressive Speech Generation",
+            14
+        ],
+        [
+            2,
+            "Speed and Memory Benchmarks",
+            15
+        ],
+        [
+            2,
+            "Model Ablations",
+            15
+        ],
+        [
+            3,
+            "Architecture",
+            15
+        ],
+        [
+            3,
+            "Selective SSM",
+            16
+        ],
+        [
+            1,
+            "Discussion",
+            16
+        ],
+        [
+            1,
+            "Conclusion",
+            17
+        ],
+        [
+            1,
+            "Discussion: Selection Mechanism",
+            24
+        ],
+        [
+            1,
+            "Related Work",
+            24
+        ],
+        [
+            2,
+            "S4 Variants and Derivatives",
+            25
+        ],
+        [
+            2,
+            "SSM Architectures",
+            25
+        ],
+        [
+            2,
+            "Relationship to RNNs",
+            26
+        ],
+        [
+            2,
+            "Linear Attention",
+            26
+        ],
+        [
+            2,
+            "Long Context Models",
+            27
+        ],
+        [
+            1,
+            "Mechanics of Selective SSMs",
+            27
+        ],
+        [
+            1,
+            "Hardware-aware Algorithm For Selective SSMs",
+            28
+        ],
+        [
+            1,
+            "Experimental Details and Additional Results",
+            29
+        ],
+        [
+            2,
+            "Synthetic Tasks",
+            29
+        ],
+        [
+            2,
+            "Language Modeling",
+            29
+        ],
+        [
+            3,
+            "Scaling Law Details",
+            29
+        ],
+        [
+            3,
+            "Additional Scaling Law Ablations",
+            30
+        ],
+        [
+            3,
+            "Downstream Evaluation Details",
+            31
+        ],
+        [
+            2,
+            "DNA Modeling",
+            32
+        ],
+        [
+            3,
+            "Pretraining Details",
+            32
+        ],
+        [
+            3,
+            "Scaling: Model Size Details",
+            32
+        ],
+        [
+            3,
+            "Scaling: Context Length Details",
+            33
+        ],
+        [
+            3,
+            "Species (Great Apes) Classification",
+            33
+        ],
+        [
+            2,
+            "Audio Details",
+            34
+        ],
+        [
+            3,
+            "YouTubeMix Audio Pretraining",
+            34
+        ],
+        [
+            3,
+            "SC09 Speech Generation",
+            35
+        ],
+        [
+            2,
+            "Efficiency Benchmark",
+            35
+        ]
+    ],
+    "pages": 36,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0
+    },
+    "block_stats": {
+        "header_footer": 0,
+        "code": 0,
+        "table": 12,
+        "equations": {
+            "successful_ocr": 7,
+            "unsuccessful_ocr": 0,
+            "equations": 7
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}

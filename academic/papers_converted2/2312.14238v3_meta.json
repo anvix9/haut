@@ -1,0 +1,135 @@
+{
+    "language": "English",
+    "filetype": "pdf",
+    "toc": [
+        [
+            1,
+            ". Introduction",
+            1
+        ],
+        [
+            1,
+            ". Related Work",
+            3
+        ],
+        [
+            2,
+            ". Vision Foundation Models",
+            3
+        ],
+        [
+            2,
+            ". Large Language Models",
+            3
+        ],
+        [
+            2,
+            ". Vision Large Language Models",
+            3
+        ],
+        [
+            1,
+            ". Proposed Method",
+            3
+        ],
+        [
+            2,
+            ". Overall Architecture",
+            3
+        ],
+        [
+            2,
+            ". Model Design",
+            4
+        ],
+        [
+            2,
+            ". Alignment Strategy",
+            5
+        ],
+        [
+            1,
+            ". Experiments",
+            6
+        ],
+        [
+            2,
+            ". Implementation Details",
+            6
+        ],
+        [
+            2,
+            ". Visual Perception Benchmarks",
+            6
+        ],
+        [
+            2,
+            ". Vision-Language Benchmarks",
+            7
+        ],
+        [
+            2,
+            ". Multi-Modal Dialogue Benchmarks",
+            8
+        ],
+        [
+            2,
+            ". Ablation Study",
+            9
+        ],
+        [
+            1,
+            ". Conclusion",
+            9
+        ],
+        [
+            1,
+            ". Supplementary Materials",
+            10
+        ],
+        [
+            2,
+            ". More Experiments",
+            10
+        ],
+        [
+            2,
+            ". More Ablation Studies",
+            10
+        ],
+        [
+            2,
+            ". Detailed Training Settings",
+            11
+        ],
+        [
+            2,
+            ". Data Preparation for Pre-training",
+            13
+        ],
+        [
+            2,
+            ". Data Preparation for SFT",
+            14
+        ]
+    ],
+    "pages": 25,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0
+    },
+    "block_stats": {
+        "header_footer": 0,
+        "code": 0,
+        "table": 23,
+        "equations": {
+            "successful_ocr": 0,
+            "unsuccessful_ocr": 0,
+            "equations": 0
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}

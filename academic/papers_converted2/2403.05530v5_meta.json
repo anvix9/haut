@@ -1,0 +1,725 @@
+{
+    "language": "English",
+    "filetype": "pdf",
+    "toc": [
+        [
+            1,
+            "Introduction",
+            1
+        ],
+        [
+            1,
+            "An Improved Gemini 1.5 Pro",
+            4
+        ],
+        [
+            1,
+            "Model Architecture",
+            5
+        ],
+        [
+            2,
+            "Gemini 1.5 Pro",
+            5
+        ],
+        [
+            2,
+            "Gemini 1.5 Flash",
+            6
+        ],
+        [
+            2,
+            "Serving efficiency and latency",
+            6
+        ],
+        [
+            1,
+            "Training Infrastructure and Dataset",
+            6
+        ],
+        [
+            1,
+            "Evaluation Results",
+            7
+        ],
+        [
+            2,
+            "Qualitative Examples of Multimodal Long-Context Capabilities",
+            7
+        ],
+        [
+            2,
+            "Long-context Evaluations",
+            7
+        ],
+        [
+            3,
+            "Diagnostic Long-Context Evaluations",
+            10
+        ],
+        [
+            4,
+            "Perplexity over Long Sequences",
+            10
+        ],
+        [
+            4,
+            "Text Haystack",
+            11
+        ],
+        [
+            4,
+            "Video Haystack",
+            12
+        ],
+        [
+            4,
+            "Audio Haystack",
+            13
+        ],
+        [
+            4,
+            "Improved Diagnostics",
+            14
+        ],
+        [
+            3,
+            "Realistic Long-Context Evaluations",
+            16
+        ],
+        [
+            4,
+            "In-context language learning \u2013 learning to translate a new language from one book",
+            17
+        ],
+        [
+            4,
+            "In-context language learning - learning to transcribe speech in a new language in context",
+            19
+        ],
+        [
+            4,
+            "Scaling In-Context learning for low-resource machine translation",
+            20
+        ],
+        [
+            4,
+            "Long-document QA",
+            21
+        ],
+        [
+            4,
+            "Long-context Audio",
+            23
+        ],
+        [
+            4,
+            "Long-context Video QA",
+            24
+        ],
+        [
+            4,
+            "In-Context Planning",
+            25
+        ],
+        [
+            4,
+            "Unstructured Multimodal Data Analytics Task",
+            28
+        ],
+        [
+            1,
+            "Core Capability Evaluations",
+            28
+        ],
+        [
+            2,
+            "Core Text Evals",
+            29
+        ],
+        [
+            3,
+            "Math and Science",
+            29
+        ],
+        [
+            3,
+            "General Reasoning",
+            31
+        ],
+        [
+            3,
+            "Code",
+            32
+        ],
+        [
+            3,
+            "Multilinguality",
+            32
+        ],
+        [
+            3,
+            "Function Calling",
+            32
+        ],
+        [
+            3,
+            "Instruction Following",
+            33
+        ],
+        [
+            3,
+            "Real-world and long-tail expert GenAI tasks",
+            34
+        ],
+        [
+            2,
+            "Core Vision Multimodal Evaluations",
+            38
+        ],
+        [
+            3,
+            "Multimodal Reasoning",
+            38
+        ],
+        [
+            3,
+            "Charts and Document Understanding",
+            40
+        ],
+        [
+            3,
+            "Natural Image Understanding",
+            41
+        ],
+        [
+            3,
+            "Video Understanding",
+            41
+        ],
+        [
+            2,
+            "Core Audio Multimodal Evaluations",
+            41
+        ],
+        [
+            1,
+            "Advancing mathematical reasoning ",
+            43
+        ],
+        [
+            1,
+            "Flash-8B: Pushing the frontier for more efficient models",
+            45
+        ],
+        [
+            1,
+            "Safety, Security, and Responsibility",
+            48
+        ],
+        [
+            2,
+            "Our Process",
+            48
+        ],
+        [
+            2,
+            "Policies and Desiderata ",
+            49
+        ],
+        [
+            3,
+            "Identifying risks (potential impact assessments)",
+            50
+        ],
+        [
+            3,
+            "Safety policies",
+            50
+        ],
+        [
+            3,
+            "Desiderata, aka ``helpfulness''",
+            51
+        ],
+        [
+            2,
+            "Training for Safety, Security, and Responsibility ",
+            51
+        ],
+        [
+            3,
+            "Pre-Training",
+            51
+        ],
+        [
+            3,
+            "Supervised Fine-Tuning",
+            51
+        ],
+        [
+            3,
+            "Reinforcement Learning from Human Feedback",
+            52
+        ],
+        [
+            2,
+            "Results on Training/Development Evaluations",
+            52
+        ],
+        [
+            3,
+            "Policy Violations",
+            52
+        ],
+        [
+            3,
+            "Helpfulness",
+            56
+        ],
+        [
+            3,
+            "Security and Privacy",
+            60
+        ],
+        [
+            3,
+            "Representational Harms",
+            65
+        ],
+        [
+            2,
+            "Assurance Evaluations",
+            68
+        ],
+        [
+            3,
+            "Baseline Assurance",
+            68
+        ],
+        [
+            3,
+            "Dangerous Capability Evaluations",
+            68
+        ],
+        [
+            2,
+            "External Safety Testing",
+            71
+        ],
+        [
+            3,
+            "Societal risks ",
+            72
+        ],
+        [
+            3,
+            "Radiological and Nuclear risks. ",
+            73
+        ],
+        [
+            3,
+            "Cyber risks",
+            73
+        ],
+        [
+            2,
+            " Product Deployment ",
+            73
+        ],
+        [
+            1,
+            "Discussion",
+            74
+        ],
+        [
+            1,
+            "Contributions and Acknowledgments",
+            92
+        ],
+        [
+            1,
+            "Appendix",
+            105
+        ],
+        [
+            2,
+            "Model Card",
+            105
+        ],
+        [
+            2,
+            "Further haystack results",
+            107
+        ],
+        [
+            2,
+            "Automatic question-generation pipeline for Long-document QA",
+            108
+        ],
+        [
+            2,
+            "Multilingual performance breakdown",
+            108
+        ],
+        [
+            2,
+            "Long context video",
+            108
+        ],
+        [
+            3,
+            "Video Haystack",
+            109
+        ],
+        [
+            3,
+            "1H-Video QA Hard Examples",
+            109
+        ],
+        [
+            2,
+            "Generic long context math prompting",
+            109
+        ],
+        [
+            3,
+            "Hendrycks' MATH Dataset: Performance Analysis and Potential for Improvement",
+            109
+        ],
+        [
+            3,
+            "Intermediate Algebra (Levels 4 and 5): A Persistent Challenge",
+            109
+        ],
+        [
+            3,
+            "Leveraging Python and SymPy for Enhanced Performance",
+            109
+        ],
+        [
+            3,
+            "Generic long prompt as an alternative to sophisticated prompts and fine-tuning",
+            110
+        ],
+        [
+            3,
+            "Python Evaluation Process",
+            110
+        ],
+        [
+            3,
+            "Downloading and preparing all SymPy and SciPy examples",
+            112
+        ],
+        [
+            3,
+            "An expert-written Python Minerva prompt",
+            113
+        ],
+        [
+            3,
+            "Example instructions added to Python prompts",
+            114
+        ],
+        [
+            3,
+            "Example problem and a Gemini 1.5 Pro solution",
+            115
+        ],
+        [
+            2,
+            "Unstructured Multimodal Data Analytics",
+            116
+        ],
+        [
+            2,
+            "Planning",
+            117
+        ],
+        [
+            2,
+            "Productivity Impact of LLMs Across Jobs",
+            124
+        ],
+        [
+            2,
+            "Expertise QA",
+            128
+        ],
+        [
+            3,
+            "Background: Why evaluate the long tail?",
+            128
+        ],
+        [
+            3,
+            "Results",
+            128
+        ],
+        [
+            3,
+            "Instructions to in-house experts (example with 5 models)",
+            128
+        ],
+        [
+            2,
+            "STEM QA with Context: Data and Human Evaluation",
+            129
+        ],
+        [
+            2,
+            "QA for Web Search Topics",
+            130
+        ],
+        [
+            3,
+            "Examples of TREC Search Topic Description",
+            131
+        ],
+        [
+            2,
+            "Prompts and answer extraction strategies",
+            132
+        ],
+        [
+            3,
+            "BBH",
+            132
+        ],
+        [
+            3,
+            "DROP",
+            132
+        ],
+        [
+            3,
+            "Hellaswag",
+            134
+        ],
+        [
+            3,
+            "MMLU",
+            134
+        ],
+        [
+            3,
+            "AMC",
+            134
+        ],
+        [
+            3,
+            "MATH",
+            135
+        ],
+        [
+            3,
+            "GSM8K",
+            136
+        ],
+        [
+            3,
+            "GPQA",
+            136
+        ],
+        [
+            3,
+            "PhysicsFinals",
+            136
+        ],
+        [
+            3,
+            "HumanEval and Natural2Code",
+            136
+        ],
+        [
+            2,
+            "Vision tasks",
+            137
+        ],
+        [
+            3,
+            "V* benchmark",
+            137
+        ],
+        [
+            3,
+            "AI2D",
+            137
+        ],
+        [
+            3,
+            "MMMU",
+            137
+        ],
+        [
+            3,
+            "MathVista",
+            138
+        ],
+        [
+            3,
+            "ChartQA",
+            138
+        ],
+        [
+            3,
+            "ChemicalDiagramQA",
+            138
+        ],
+        [
+            3,
+            "DocVQA",
+            139
+        ],
+        [
+            3,
+            "DUDE",
+            139
+        ],
+        [
+            3,
+            "TAT-DQA",
+            139
+        ],
+        [
+            3,
+            "InfographicVQA",
+            139
+        ],
+        [
+            3,
+            "TextVQA",
+            140
+        ],
+        [
+            3,
+            "VQAv2",
+            140
+        ],
+        [
+            2,
+            "Blink",
+            140
+        ],
+        [
+            2,
+            "RealworldQA",
+            140
+        ],
+        [
+            3,
+            "ActivityNet-QA",
+            140
+        ],
+        [
+            3,
+            "EgoSchema",
+            140
+        ],
+        [
+            3,
+            "VATEX",
+            141
+        ],
+        [
+            3,
+            "YouCook2",
+            141
+        ],
+        [
+            3,
+            "OpenEQA",
+            141
+        ],
+        [
+            3,
+            "Text Needle-in-a-Haystack",
+            141
+        ],
+        [
+            3,
+            "Video Needle-in-a-Haystack",
+            142
+        ],
+        [
+            3,
+            "Audio Needle-in-a-Haystack",
+            142
+        ],
+        [
+            3,
+            "Multi-round Co-reference Resolution (MRCR)",
+            142
+        ],
+        [
+            3,
+            "Long-document QA",
+            143
+        ],
+        [
+            3,
+            "1H-VideoQA",
+            143
+        ],
+        [
+            3,
+            "Long-context Audio",
+            144
+        ],
+        [
+            3,
+            "MTOB",
+            144
+        ],
+        [
+            3,
+            "ASROB",
+            145
+        ],
+        [
+            3,
+            "Multilinguality",
+            145
+        ],
+        [
+            3,
+            "Dolomites",
+            146
+        ],
+        [
+            2,
+            "More MTOB results",
+            147
+        ],
+        [
+            3,
+            "Qualitative Examples",
+            148
+        ],
+        [
+            2,
+            "More BetterChartQA Details and Results",
+            149
+        ]
+    ],
+    "pages": 154,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0
+    },
+    "block_stats": {
+        "header_footer": 153,
+        "code": 104,
+        "table": 33,
+        "equations": {
+            "successful_ocr": 1,
+            "unsuccessful_ocr": 0,
+            "equations": 1
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}

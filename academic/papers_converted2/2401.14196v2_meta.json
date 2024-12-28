@@ -1,0 +1,150 @@
+{
+    "language": "English",
+    "filetype": "pdf",
+    "toc": [
+        [
+            1,
+            "Introduction",
+            1
+        ],
+        [
+            1,
+            "Data Collection",
+            3
+        ],
+        [
+            2,
+            "GitHub Data Crawling and Filtering",
+            3
+        ],
+        [
+            2,
+            "Dependency Parsing",
+            3
+        ],
+        [
+            2,
+            "Repo-Level Deduplication",
+            5
+        ],
+        [
+            2,
+            "Quality Screening and Decontamination",
+            5
+        ],
+        [
+            1,
+            "Training Policy",
+            5
+        ],
+        [
+            2,
+            "Training Strategy",
+            6
+        ],
+        [
+            3,
+            "Next Token Prediction",
+            6
+        ],
+        [
+            3,
+            "Fill-in-the-Middle",
+            6
+        ],
+        [
+            2,
+            "Tokenizer",
+            8
+        ],
+        [
+            2,
+            "Model Architecture",
+            8
+        ],
+        [
+            2,
+            "Optimization",
+            8
+        ],
+        [
+            2,
+            "Environments",
+            8
+        ],
+        [
+            2,
+            "Long Context",
+            9
+        ],
+        [
+            2,
+            "Instruction Tuning",
+            9
+        ],
+        [
+            1,
+            "Experimental Results",
+            9
+        ],
+        [
+            2,
+            "Code Generation",
+            11
+        ],
+        [
+            2,
+            "Fill-in-the-Middle Code Completion",
+            13
+        ],
+        [
+            2,
+            "Cross-File Code Completion",
+            14
+        ],
+        [
+            2,
+            "Program-based Math Reasoning",
+            15
+        ],
+        [
+            1,
+            "Continue Pre-Training From General LLM",
+            15
+        ],
+        [
+            1,
+            "Conclusion",
+            16
+        ],
+        [
+            1,
+            "Cases of Chatting with DeepSeek-Coder-Instruct",
+            21
+        ],
+        [
+            1,
+            "Benchmark curves during training of DeepSeek-Coder-Base",
+            22
+        ]
+    ],
+    "pages": 23,
+    "ocr_stats": {
+        "ocr_pages": 0,
+        "ocr_failed": 0,
+        "ocr_success": 0
+    },
+    "block_stats": {
+        "header_footer": 0,
+        "code": 14,
+        "table": 7,
+        "equations": {
+            "successful_ocr": 0,
+            "unsuccessful_ocr": 0,
+            "equations": 0
+        }
+    },
+    "postprocess_stats": {
+        "edit": {}
+    }
+}
