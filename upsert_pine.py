@@ -1,11 +1,13 @@
 import requests
 from pathlib import Path
 import re 
+import os
 import json 
 from pinecone.grpc import PineconeGRPC as Pinecone
 from pinecone import ServerlessSpec
 from typing import Dict, List, Union
 from tqdm import tqdm
+from dotenv import load_dotenv
 
 ## Load Current folder 
 def load_json_files(directory='./paper_analysis/'):
@@ -62,20 +64,6 @@ def get_embeddings(content: str) -> List[float]:
         print(f"Error extracting embedding: {str(e)}")
         return None
 
-#def initialize_pinecone(api_key: str, environment: str, index_name: str) -> pinecone.Index:
-#    """Initialize Pinecone connection and ensure index exists"""
-#    index = pc.Index("haut-main-questions")
-#    pinecone.init(api_key=api_key, environment=environment)
-#    
-#    # Create index if it doesn't exist
-#    if index_name not in pinecone.list_indexes():
-#        pinecone.create_index(
-#            name=index_name,
-#            dimension=3072,  # adjust based on your model's embedding size
-#            metric='cosine'
-#        )
-#    
-#    return pinecone.Index(index_name)
 
 def upsert_to_pinecone(index, data: Dict[str, List[str]]) -> None:
     """Upsert embeddings and metadata to Pinecone"""
@@ -107,10 +95,17 @@ def upsert_to_pinecone(index, data: Dict[str, List[str]]) -> None:
         index.upsert(vectors=vectors_batch)
 
 def main():
+
+    # Load environment variables
+    load_dotenv()
+    
+    # Get credentials from environment
+    api_key = os.getenv('PINECONE_API_KEY')
+    index_name = os.getenv('PINECONE_INDEX_NAME')
+
     # Configuration
-    pc = Pinecone(api_key="pcsk_4YX277_3kx2kBtKQuxNXHSQsfpV9ktV8qWV25evsVZyqfBShQ6FYc5FNGknQdC5ejzXUJx")
-    PINECONE_ENV = "https://haut-main-questions-zz1viks.svc.aped-4627-b74a.pinecone.io"
-    index = pc.Index("haut-main-questions")
+    pc = Pinecone(api_key=api_key)
+    index = pc.Index(index_name)
     
     # Load and process files
     files = load_json_files()
