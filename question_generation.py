@@ -18,7 +18,7 @@ def get_topics(content):
     )
     
     _payload = {
-        "model": "gemma2:2b",
+        "model": "saish_15/tethysai_research",
         "prompt": _custom_prompt,
         "stream": False,
         "options": {"num_ctx": 6000},
