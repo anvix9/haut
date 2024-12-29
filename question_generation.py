@@ -52,7 +52,8 @@ def get_llama_question(section, theme):
             f"Focus on identifying the problem they aim to solve, the motivations behind the study, and any "
             f"explicit or implicit questions they raise in the introduction or abstract or in this passage. "
             f"Provide the research question in clear and concise terms with high precision. "
-            f"The questions must follow this - Q1: ...., Q2:....,etc, Contribution:.... : {section}"
+            f"IMPORTANT: Do not generate questions like : What is the primary problem addressed by this research paper?, Or What motivates the development of this solution, and what are the costs associated with LLM serving systems? You need to generate full question by writitng exactly the name of the techniques and not refer it as 'this, the proposed solutions, exisiting or current solution, etc...'"
+            f"The questions must follow this - Q1: ....?, Q2:....?,etc, Contribution:.... : {section}"
         )
     elif theme == 'method':
         _custom_prompt = (
