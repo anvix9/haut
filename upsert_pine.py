@@ -87,7 +87,7 @@ def upsert_to_pinecone(index, data: Dict[str, List[str]]) -> None:
                 
                 # Batch upsert when reaching batch_size
                 if len(vectors_batch) >= batch_size:
-                    index.upsert(vectors=vectors_batch)
+                    index.upsert(vectors=vectors_batch, namespace="main-questions")
                     vectors_batch = []
     
     # Upsert any remaining vectors

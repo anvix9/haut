@@ -50,17 +50,18 @@ def get_llama_question(section, theme):
         _custom_prompt = (
             f"Read the sections carefully and summarize the main research question the authors are addressing. "
             f"Focus on identifying the problem they aim to solve, the motivations behind the study, and any "
-            f"explicit or implicit questions they raise in the introduction or abstract or in this passage. "
+            f"explicit or implicit questions they raise in the introduction or abstract or in this passage. YOU MUST ANSWER the main question 'WHY'"
+            f"Simply take the results contribution and convert it into a Research Problem transparently."
             f"Provide the research question in clear and concise terms with high precision. "
             f"IMPORTANT: Do not generate questions like : What is the primary problem addressed by this research paper?, Or What motivates the development of this solution, and what are the costs associated with LLM serving systems? You need to generate full question by writitng exactly the name of the techniques and not refer it as 'this, the proposed solutions, exisiting or current solution, etc...'"
-            f"The questions must follow this - Q1: ....?, Q2:....?,etc, Contribution:.... : {section}"
+            f"The questions must follow this - Q1: ....? etc, Contribution:.... : {section}"
         )
     elif theme == 'method':
         _custom_prompt = (
             f"Analyze the methodology section of the paper and summarize the key methodological approach "
             f"used by the authors. Highlight the data, techniques, models, or tools employed to address "
             f"the research question. Identify any specific hypotheses tested, experimental setups, or "
-            f"computational methods, and explain how these align with the research objectives.. "
+            f"computational methods, and explain how these align with the research objectives.YOU MUST ANSWER the main question 'HOW' . "
             f"The answer must follow this - Methodology:.....: {section}"
         )
     else: 
