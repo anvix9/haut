@@ -28,8 +28,8 @@ def fetch_arxiv_data(paper_ids):
             data.append(paper_data)
             
             # Download PDF with proper delay
-            pdf_path = f"./data/dair_2023/arxiv_23/{paper_id}.pdf"
-            paper.download_pdf(filename=pdf_path)
+            #pdf_path = f"./data/dair_2023/arxiv_23/{paper_id}.pdf"
+            #paper.download_pdf(filename=pdf_path)
 
             time.sleep(4)  # Respectful delay between requests
             
@@ -37,26 +37,28 @@ def fetch_arxiv_data(paper_ids):
             print(f"Error processing {paper_id}: {str(e)}")
             
     # Save metadata
-    with open("./paper_metadata/arxiv_data.json", 'w') as json_file:
+    with open("./paper_metadata/arxiv_data_test.json", 'w') as json_file:
         json.dump(data, json_file, indent=4)
     print("Data saved to arxiv_data.json")
 
-# Create output directory
 output_folder = "./data/dair_2023/arxiv_23"
 os.makedirs(output_folder, exist_ok=True)
 
-dair= pd.read_csv("./data/dair_2023.csv")
-list_paper_ids = []
+# Create output directory
+# Here I have to make it generic to pass the bucket data
 
-for p in dair["dair_2023"]:
-    tmp_p = p.rsplit("/",1)[-1]
-    list_paper_ids.append(tmp_p)
-# Example usage
+input_folder = "./academic/papers"  # Folder containing markdown files
+pdf_files = [f.rsplit(".pdf")[0] for f in os.listdir(input_folder) if f.endswith('.pdf')]
+#dair= pd.read_csv("./data/dair_2023.csv")
+#list_paper_ids = []
+#
+#for p in dair["dair_2023"]:
+#    tmp_p = p.rsplit("/",1)[-1]
+#    list_paper_ids.append(tmp_p)
 
-# Create a directory to save PDFs
-output_folder = "./data/dair_2023/arxivfs"
-os.makedirs(output_folder, exist_ok=True)
 
-# Use the same paper IDs list you already have
-fetch_arxiv_data(list_paper_ids)#Dair_data
+# Use the paper IDs list 
+#fetch_arxiv_data(list_paper_ids) #Dair_data
+fetch_arxiv_data(pdf_files) #Test_data
+
 

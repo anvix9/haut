@@ -49,8 +49,8 @@ def get_gemma_summary(content):
 
 def generate_paper_cards():
     # Load paper titles
-    with open('paper_metadata/paper_titles.json', 'r') as f:
-        titles = json.load(f)
+    with open('paper_metadata/arxiv_data.json', 'r') as f:
+        papers = json.load(f)
     
     # Create output directory
     Path('paper_cards').mkdir(exist_ok=True)
@@ -64,7 +64,8 @@ def generate_paper_cards():
             analysis = json.load(f)
         
         # Get paper title
-        title = titles.get(paper_id, "Unknown Title")
+        #title = titles.get(paper_id, "Unknown Title")
+        title = next((paper['title'] for paper in papers if paper['id'] == paper_id), "Unknown Title")
         
         # Combine content for summary
         content = f"{analysis['research']}\n{analysis['method']}\n{analysis['results']}"

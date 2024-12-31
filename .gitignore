@@ -4,6 +4,7 @@ markerx/
 data/
 TethysAI_Research/
 models/models_env/
+__pycache__/
 
 # Packages #
 ############
