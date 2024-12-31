@@ -135,15 +135,24 @@ def process_markdown_files(input_folder, output_folder):
     # Define section categories
     research_question_sections = [
         "Abstract", "Introduction", "Conclusion", "goals", "Motivation", "Motivations", 
-        "overview", "problem statement", "research problem", "objectives", "aims"
+        "overview", "problem statement", "research problem", "objectives", "aims", "objective",
+        "main"
     ]
     method_questions = [
         "Method", "Methods", "architecture", "Abstract", "study", "studies", 
-        "methodologies", "approach", "approaches", "preliminary", "preliminaries"
+        "methodologies", "approach", "approaches", "preliminary", "preliminaries",
+        "Technical specifications", "Specifications","Problem-setup", "Pre-training",
+        "experimental setup","approximate methods","procedure", "ablations", "ablation study", "Model", "Dataset",
+        "details", "evaluation tasks", "data construction", "inference","field architecture", "implementation study", "setup"
+        "experiment settings", "design recipes","method and data collection", "Materials", "discussions"
     ]
+
     results_question_sections = [
         "conclusion", "discussion", "study", "studies", "future work", 
-        "Summary", "Abstract", "future directions"
+        "Summary", "Abstract", "future directions","Limitation", "limitations", "limitation",
+         "analysis",  "evaluations", "Broader impacts", "impact", "impacts", 
+        "objectives",  "main results", "evaluations", "training principles", "summary statistics", "conclusions, limitations, and discussion",
+        "limitations and future works", "limitation and future work", "conclusion and discussion"
     ]
     themes = ['research', 'method', 'results']
     

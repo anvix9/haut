@@ -48,7 +48,11 @@ def main():
         "Abstract", "Introduction", "Method", "Conclusion","study", "studies", "discussion", "preliminaries","preliminary",
         "Summary", "Overview", "Background", "Future Work", "Motivation", "Problem Statement", "conclusions", "methodologies","methods",
         "approach", "approaches", "future directions", "architecture", "perspectives", "objectives", "aims", "motivations", "problem statement", "research problem", "goals",
-        "Technical specifications", "Specifications", "State-of-the-art", "Problem-setup", "Pre-training", "Limitations", "Materials"
+        "Technical specifications", "Specifications", "State-of-the-art", "Problem-setup", "Pre-training", "Limitations", "Materials", "discussions", "limitations", "limitation",
+        "experimental setup", "analysis", "approximate methods", "evaluations", "Broader impacts", "impact", "impacts", "procedure", "ablations", "ablation study", "Model", "Dataset",
+        "objectives", "objective", "details", "evaluation tasks", "data construction", "inference", "main results", "field architecture", "implementation study", "setup",
+        "experiment settings", "design recipes", "evaluations", "training principles", "method and data collection", "summary statistics", "conclusions, limitations, and discussion",
+        "limitations and future works", "limitation and future work", "conclusion and discussion"
     ]
     md_files = [f for f in os.listdir(input_dir) if f.lower().endswith('.md')]
 

@@ -5,12 +5,16 @@ import time
 import json
 import os
 from urllib.parse import urlparse
+from datetime import datetime 
 
-def fetch_arxiv_data(paper_ids):
+
+def fetch_arxiv_data(paper_ids, timestamp):
     data = []
     client = arxiv.Client()
     
     for paper_id in paper_ids:
+        tag, paper_id = paper_id.split("_")
+
         print(f"Fetching {paper_id}...")
         try:
             # Use the official API to search
@@ -23,7 +27,8 @@ def fetch_arxiv_data(paper_ids):
                 "title": paper.title,
                 "authors": [str(author) for author in paper.authors],
                 "submission_date": paper.published.strftime("%Y-%m-%d"),
-                "link": paper.entry_id
+                "link": paper.entry_id,
+                "tag": tag
             }
             data.append(paper_data)
             
@@ -37,28 +42,21 @@ def fetch_arxiv_data(paper_ids):
             print(f"Error processing {paper_id}: {str(e)}")
             
     # Save metadata
-    with open("./paper_metadata/arxiv_data_test.json", 'w') as json_file:
+    with open(f"./paper_metadata/metadata_{timestamp}.json", 'w') as json_file:
         json.dump(data, json_file, indent=4)
-    print("Data saved to arxiv_data.json")
+    print(f"Data saved to metadata_{timestamp}.json")
 
-output_folder = "./data/dair_2023/arxiv_23"
-os.makedirs(output_folder, exist_ok=True)
+# Format it as required: '2020_07_15_143026' (without milliseconds)
+timestamp = datetime.datetime.now() 
+dt = datetime.strptime(timestamp, "%Y-%m-%d %H:%M:%S.%f")
+formatted_timestamp = dt.strftime("%Y_%m_%d_%H%M%S")
 
 # Create output directory
 # Here I have to make it generic to pass the bucket data
-
-input_folder = "./academic/papers"  # Folder containing markdown files
-pdf_files = [f.rsplit(".pdf")[0] for f in os.listdir(input_folder) if f.endswith('.pdf')]
-#dair= pd.read_csv("./data/dair_2023.csv")
-#list_paper_ids = []
-#
-#for p in dair["dair_2023"]:
-#    tmp_p = p.rsplit("/",1)[-1]
-#    list_paper_ids.append(tmp_p)
-
+input_folder = "./paper_compressed/"  # Folder containing markdown files
+pdf_files = [f.rsplit("_extracted")[0] for f in os.listdir(input_folder) if f.endswith('.md')]
 
 # Use the paper IDs list 
-#fetch_arxiv_data(list_paper_ids) #Dair_data
-fetch_arxiv_data(pdf_files) #Test_data
+fetch_arxiv_data(pdf_files, formatted_timestamp) 
 
 
