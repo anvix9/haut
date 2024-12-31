@@ -1,6 +1,7 @@
 .env
 env/
 markerx/
+data/
 TethysAI_Research/
 models/models_env/
 
