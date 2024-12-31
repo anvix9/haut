@@ -3,7 +3,7 @@ import os
 import requests
 from pathlib import Path
 
-def get_gemma_summary(content):
+def get_tethy_summary(content):
     url = "http://127.0.0.1:11434/api/generate"
     prompt = (
         f"Summarize this paper content into a bulleted list of main results, Methods and contributions. Just give the answer without any polite texts before."
@@ -49,7 +49,7 @@ def get_gemma_summary(content):
 
 def generate_paper_cards():
     # Load paper titles
-    with open('paper_metadata/arxiv_data.json', 'r') as f:
+    with open('paper_metadata/metadata_2024_12_31_143026.json', 'r') as f:
         papers = json.load(f)
     
     # Create output directory
@@ -59,6 +59,7 @@ def generate_paper_cards():
     analysis_files = Path('paper_analysis').glob('*_analysis.json')
     for analysis_path in analysis_files:
         paper_id = analysis_path.stem.replace('_analysis', '')
+        paper_id = paper_id.split('_')[-1]
         
         with open(analysis_path, 'r') as f:
             analysis = json.load(f)
@@ -69,7 +70,7 @@ def generate_paper_cards():
         
         # Combine content for summary
         content = f"{analysis['research']}\n{analysis['method']}\n{analysis['results']}"
-        summary = get_gemma_summary(content)
+        summary = get_tethy_summary(content)
         summary = summary.split(":")[-1]
         
         tmp_topics = ", ".join(analysis['topics'])

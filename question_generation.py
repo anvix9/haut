@@ -205,7 +205,7 @@ def process_markdown_files(input_folder, output_folder):
 
 # Example usage
 if __name__ == "__main__":
-    input_folder = "./converted_markdown_trends"  # Folder containing markdown files
+    input_folder = "./converted_markdowns"  # Folder containing markdown files
     output_folder = "./paper_analysis"  # Folder where JSON files will be saved
     
     process_markdown_files(input_folder, output_folder)
