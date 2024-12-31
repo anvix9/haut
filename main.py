@@ -12,22 +12,30 @@ def main():
     # Initialize services
     pinecone_service = services.PineconeService(api_key, index_name)
     
-    # Convert PDF ->  [markdown]
-    
-    # Parse and select sections from Markdown 
+    # Backend processes
+    ## Convert PDF ->  [markdown]
+    ## pdf_md_converter.py
 
-    # Save Metadata 
+    ## Parse and select sections from Markdown 
+    ## paper_compresser.py    
 
-    # Generate main reaearch questions answered 
+    ## Save Metadata 
+    ## get_metadata.py 
 
-    # Generate paper cards 
+    ## Generate main reaearch questions answered 
+    ## question_generation.py
 
-    # Generate gap or future questions 
+    ## Generate paper cards 
+    ## generate_card.py 
 
-    # Upserting them
+    ## Generate gap or future questions 
+    ## question_future.py 
+
+    ## Upserting them
     #utils.upsert_documents(pinecone_service)
 
-    # Query interface 
+    # FrontEnd
+    ## Query interface 
 
     # Test query
     query = "Can Gemini, a family of highly capable multimodal models, be fine-tuned to achieve human-expert performance in various reasoning tasks?"

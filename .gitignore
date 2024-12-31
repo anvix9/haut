@@ -2,6 +2,7 @@
 env/
 markerx/
 data/
+archived/
 TethysAI_Research/
 models/models_env/
 __pycache__/
