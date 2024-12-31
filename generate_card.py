@@ -56,11 +56,12 @@ def generate_paper_cards():
     Path('paper_cards').mkdir(exist_ok=True)
     
     # Process each analysis file
+    iter_ = 0
     analysis_files = Path('paper_analysis').glob('*_analysis.json')
     for analysis_path in analysis_files:
         paper_id = analysis_path.stem.replace('_analysis', '')
         paper_id = paper_id.split('_')[-1]
-        
+
         with open(analysis_path, 'r') as f:
             analysis = json.load(f)
         
@@ -77,22 +78,22 @@ def generate_paper_cards():
         # Generate markdown content
         md_content = f"""# {title}
 
-# Research questions
-{analysis['research']}
+        # Research questions
+        {analysis['research']}
 
-## Problem Statement, Methods and Main Results
-{summary}
+        ## Problem Statement, Methods and Main Results
+        {summary}
 
-#### Keywords: {tmp_topics}\n
+        #### Keywords: {tmp_topics}\n
 
-### [Link to paper](https://arxiv.org/abs/{paper_id})
-"""
+        ### [Link to paper](https://arxiv.org/abs/{paper_id})
+        """
         
         # Save to markdown file
         output_path = f"paper_cards/{paper_id}_card.md"
         with open(output_path, 'w') as f:
             f.write(md_content)
-        
+        iter_ +=1 
         print(f"Generated card for {paper_id}")
 
 if __name__ == "__main__":
