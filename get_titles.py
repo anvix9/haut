@@ -1,52 +1,62 @@
-import requests
-from bs4 import BeautifulSoup
-import os
+import pandas as pd
 import json
-import re
-from time import sleep
+import arxiv
+import time
+import json
+import os
+from urllib.parse import urlparse
 
-def get_paper_title(paper_id):
-    url = f"https://arxiv.org/abs/{paper_id}"
-    try:
-        response = requests.get(url)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
-        title_element = soup.find('h1', class_='title mathjax')
-        if title_element:
-            # Remove 'Title:' prefix and clean up whitespace
-            title = title_element.text.replace('Title:', '').strip()
-            return title
-        return None
-    except Exception as e:
-        print(f"Error fetching title for {paper_id}: {str(e)}")
-        return None
+def fetch_arxiv_data(paper_ids):
+    data = []
+    client = arxiv.Client()
+    
+    for paper_id in paper_ids:
+        print(f"Fetching {paper_id}...")
+        try:
+            # Use the official API to search
+            search = arxiv.Search(id_list=[paper_id])
+            paper = next(client.results(search))
+            
+            # Extract data
+            paper_data = {
+                "id": paper_id,
+                "title": paper.title,
+                "authors": [str(author) for author in paper.authors],
+                "submission_date": paper.published.strftime("%Y-%m-%d"),
+                "link": paper.entry_id
+            }
+            data.append(paper_data)
+            
+            # Download PDF with proper delay
+            pdf_path = f"./data/dair_2023/arxiv_23/{paper_id}.pdf"
+            paper.download_pdf(filename=pdf_path)
 
-def scrape_titles(input_folder, output_folder):
-    os.makedirs(output_folder, exist_ok=True)
-    titles_dict = {}
-    
-    md_files = [f for f in os.listdir(input_folder) if f.endswith('.md')]
-    
-    for md_file in md_files:
-        # Extract paper ID (remove .md extension)
-        paper_id = os.path.splitext(md_file)[0]
-        print(f"Fetching title for {paper_id}")
-        
-        title = get_paper_title(paper_id)
-        if title:
-            titles_dict[paper_id] = title
-        
-        # Be nice to ArXiv servers
-        sleep(1)
-    
-    # Save titles to JSON
-    output_path = os.path.join(output_folder, 'paper_titles.json')
-    with open(output_path, 'w', encoding='utf-8') as f:
-        json.dump(titles_dict, f, indent=4)
-    
-    return titles_dict
+            time.sleep(4)  # Respectful delay between requests
+            
+        except Exception as e:
+            print(f"Error processing {paper_id}: {str(e)}")
+            
+    # Save metadata
+    with open("./paper_metadata/arxiv_data.json", 'w') as json_file:
+        json.dump(data, json_file, indent=4)
+    print("Data saved to arxiv_data.json")
 
-if __name__ == "__main__":
-    input_folder = "./converted_markdown_trends"
-    output_folder = "./paper_title_metadata"
-    titles = scrape_titles(input_folder, output_folder)
+# Create output directory
+output_folder = "./data/dair_2023/arxiv_23"
+os.makedirs(output_folder, exist_ok=True)
+
+dair= pd.read_csv("./data/dair_2023.csv")
+list_paper_ids = []
+
+for p in dair["dair_2023"]:
+    tmp_p = p.rsplit("/",1)[-1]
+    list_paper_ids.append(tmp_p)
+# Example usage
+
+# Create a directory to save PDFs
+output_folder = "./data/dair_2023/arxivfs"
+os.makedirs(output_folder, exist_ok=True)
+
+# Use the same paper IDs list you already have
+fetch_arxiv_data(list_paper_ids)#Dair_data
+
