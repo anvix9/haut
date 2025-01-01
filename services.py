@@ -42,25 +42,45 @@ class PineconeService:
         vectors_batch = []
         
         for paper_id, document in tqdm(data.items(), desc="Processing documents"):
-            embedding = self.embedding_service.get_embeddings(document['content'])
-            if embedding:
-                vector = {
-                    'id': f"{paper_id}",
-                    'values': embedding[0],
-                    'metadata': {
-                        'paper_id': paper_id,
-                        'question': document['content'],
-                        'title': document['metadata']['title'],
-                        'authors': document['metadata']['authors'],
-                        'submission_date': document['metadata']['submission_date'],
-                        'link': document['metadata']['link']
+
+            if(namespace == "paper-card"):
+                embedding = self.embedding_service.get_embeddings(document['content'])
+                if embedding:
+                    vector = {
+                        'id': f"{paper_id}",
+                        'values': embedding[0],
+                        'metadata': {
+                            'paper_id': paper_id,
+                            'content': document['content'],
+                            'title': document['metadata']['title'],
+                            'authors': document['metadata']['authors'],
+                            'submission_date': document['metadata']['submission_date'],
+                            'link': document['metadata']['link']
+                        }
                     }
-                }
-                vectors_batch.append(vector)
-                
-                if len(vectors_batch) >= batch_size:
-                    self.index.upsert(vectors=vectors_batch, namespace=namespace)
-                    vectors_batch = []
+                    vectors_batch.append(vector)
+                    
+                    if len(vectors_batch) >= batch_size:
+                        self.index.upsert(vectors=vectors_batch, namespace=namespace)
+                        vectors_batch = []
+            
+
+            else:
+                embedding = self.embedding_service.get_embeddings(document['questions'])
+                if embedding:
+                    vector = {
+                        'id': f"{paper_id}",
+                        'values': embedding[0],
+                        'metadata': {
+                            'questions': document['questions'],
+                            'paper_id': paper_id,
+                        }
+                    }
+                    vectors_batch.append(vector)
+                    
+                    if len(vectors_batch) >= batch_size:
+                        self.index.upsert(vectors=vectors_batch, namespace=namespace)
+                        vectors_batch = []
         
         if vectors_batch:
             self.index.upsert(vectors=vectors_batch, namespace=namespace)

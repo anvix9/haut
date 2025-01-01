@@ -32,18 +32,19 @@ def main():
     ## question_future.py 
 
     ## Upserting them
-    #utils.upsert_documents(pinecone_service)
+#    services.upsert_documents(pinecone_service)
 
     # FrontEnd
     ## Query interface 
 
     # Test query
     query = "Can Gemini, a family of highly capable multimodal models, be fine-tuned to achieve human-expert performance in various reasoning tasks?"
-    results_questions = utils.two_stage_retrieval(pinecone_service, query)
-    tmp_res = results_questions.data[0]["document"]["text"]
-    results_card = utils.two_stage_retrieval(pinecone_service,tmp_res, namespace='paper-card')
+    results_questions = utils.two_stage_retrieval(pinecone_service, query) 
+    tmp_res = results_questions
+    print(tmp_res)
+    #results_card = utils.two_stage_retrieval(pinecone_service,tmp_res, namespace='paper-card')
 
-    print(results_card)
+#    print(results_card)
 
 if __name__ == "__main__":
     main()

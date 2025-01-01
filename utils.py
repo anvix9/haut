@@ -47,8 +47,8 @@ def two_stage_retrieval(pinecone_service, query: str, namespace: str = "main-res
         return None
         
     # Extract documents for reranking
-    documents = [match.metadata.get('question', '') for match in initial_results['matches']]
-    
+    documents = [match.metadata.get('questions', '') for match in initial_results['matches']]
+    print(documents) 
     # Second stage: Reranking
     reranked_results = pinecone_service.rerank_results(query, documents, final_k)
     
