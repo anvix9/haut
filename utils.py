@@ -47,17 +47,50 @@ def two_stage_retrieval(pinecone_service, query: str, namespace: str = "main-res
         return None
         
     # Extract documents for reranking
-    documents = [match.metadata.get('questions', '') for match in initial_results['matches']]
-    print(documents) 
+    if(namespace=='paper-card'):
+        query = initial_results['matches'][0]['metadata']['text']
+
+    documents = [ match['metadata'] for match in initial_results['matches']]
     # Second stage: Reranking
     reranked_results = pinecone_service.rerank_results(query, documents, final_k)
     
-    return reranked_results
+    return reranked_results 
+
+def fetch_and_query(pinecone_service, query, primary_namespace, secondary_namespace):
+    """
+    Fetch and rerank results based on an initial query and a fetched vector.
+
+    Args:
+        pinecone_service: The Pinecone service instance.
+        query (str): The initial query string.
+        primary_namespace (str): The namespace for the initial retrieval.
+        secondary_namespace (str): The namespace for the secondary retrieval.
+
+    Returns:
+        dict: Final results from the secondary retrieval.
+    """
+    # Step 1: Perform initial retrieval
+    results_questions = two_stage_retrieval(pinecone_service, query, namespace=primary_namespace)
+    if not results_questions:
+        raise ValueError("No results found in the initial retrieval.")
+
+    # Step 2: Fetch the vector for the top result
+    top_paper_id = results_questions[0]['paper_id']
+    paper_fetch = pinecone_service.index.fetch(ids=[top_paper_id], namespace=secondary_namespace)
+
+    # Validate fetch results
+    if top_paper_id not in paper_fetch['vectors']:
+        raise ValueError(f"Paper ID {top_paper_id} not found in fetch results.")
+
+    paper_query_vector = paper_fetch['vectors'][top_paper_id]['values']
+    # Step 3: Perform secondary retrieval using the fetched vector
+    results_card = two_stage_retrieval(pinecone_service, paper_query_vector, namespace=secondary_namespace)
+    return results_card
 
 # Upserting
-def upsert_documents(pinecone_service):
-    data_loader_ = data_loader.DataLoader()
-    documents = data_loader_.load_markdown_files()
-    pinecone_service.upsert_documents(documents)
-
+#def upsert_documents(pinecone_service):
+#    data_loader_ = data_loader.DataLoader()
+#    documents = data_loader_.load_markdown_files()
+#    pinecone_service.upsert_documents(documents)
+#
 

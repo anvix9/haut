@@ -35,16 +35,22 @@ def main():
 #    services.upsert_documents(pinecone_service)
 
     # FrontEnd
-    ## Query interface 
+    # Main query interface
+    query = "What is Gemini?"
 
-    # Test query
-    query = "Can Gemini, a family of highly capable multimodal models, be fine-tuned to achieve human-expert performance in various reasoning tasks?"
-    results_questions = utils.two_stage_retrieval(pinecone_service, query) 
-    tmp_res = results_questions
-    print(tmp_res)
-    #results_card = utils.two_stage_retrieval(pinecone_service,tmp_res, namespace='paper-card')
+    try:
+        results = utils.fetch_and_query(
+            pinecone_service, 
+            query=query, 
+            primary_namespace='main-research-questions', 
+            secondary_namespace='paper-card'
+        )
+        for card in results:
+            print(f"{card['link']} - score {card['score']}")
+    except ValueError as e:
+        print(f"Error: {e}")
 
-#    print(results_card)
+
 
 if __name__ == "__main__":
     main()
