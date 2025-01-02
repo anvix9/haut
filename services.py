@@ -161,15 +161,3 @@ class PineconeService:
         rerankrequest = RerankRequest(query=query, passages=documents)
         results = ranker.rerank(rerankrequest) 
         return results
-        #try:
-        #    return self.pc.inference.rerank(
-        #        model="bge-reranker-v2-m3",
-        #        query=query,
-        #        documents=documents,
-        #        top_n=top_n,
-        #        return_documents=True,
-        #        parameters={"truncate": "END"}
-        #    )
-        #except Exception as e:
-        #    print(f"Error during reranking: {e}")
-        #    return None

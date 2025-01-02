@@ -44,7 +44,7 @@ class DataLoader:
                 
                 # Create document with content and metadata
                 document = {
-                    'questions': questions,
+                    'questions': " - ".join(questions),
                     'metadata': {
                         'paper_id': paper_id,
                     }

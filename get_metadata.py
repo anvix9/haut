@@ -4,9 +4,7 @@ import arxiv
 import time
 import json
 import os
-from urllib.parse import urlparse
 from datetime import datetime 
-
 
 def fetch_arxiv_data(paper_ids, timestamp):
     data = []

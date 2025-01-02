@@ -1,8 +1,6 @@
 from pathlib import Path 
 import json 
 import re 
-import services 
-import data_loader
 
 def load_json_files(directory='./paper_analysis/'):
     """
@@ -92,5 +90,3 @@ def fetch_and_query(pinecone_service, query, primary_namespace, secondary_namesp
 #    data_loader_ = data_loader.DataLoader()
 #    documents = data_loader_.load_markdown_files()
 #    pinecone_service.upsert_documents(documents)
-#
-
